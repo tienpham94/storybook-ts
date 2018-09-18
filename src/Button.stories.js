@@ -1,20 +1,21 @@
-import React from "react";
-import { wInfo } from "./utils";
+import React from 'react';
+import { wInfo } from './utils';
 
-import { storiesOf } from "@storybook/react";
-import { Button } from "./Button";
+import { storiesOf } from '@storybook/react';
+import { Button } from './Button';
+import { color } from '@storybook/addon-knobs/react';
 
-storiesOf("Button", module)
+storiesOf('Button', module)
   .addWithJSX(
-    "with background",
+    'with background',
     wInfo(`
       description
       
       ~~~js
       <Button>slkdjslkdj</Button>
       ~~~
-      `)(() => <Button bg="palegoldenrod">Hello world</Button>)
+      `)(() => <Button bg="palegoldenrod">Hello world</Button>),
   )
-  .addWithJSX("with background 2", () => (
-    <Button bg="green">Hello world2</Button>
+  .addWithJSX('with background 2', () => (
+    <Button bg={color('bg', 'green', 'group1')}>Hello world2</Button>
   ));
